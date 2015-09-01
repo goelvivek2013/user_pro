@@ -1,0 +1,7 @@
+<%= form_for [@profile, @profile.images.build], html: {multipart: true} do |f| %>
+  <%= f.file_field :avatar, id: "image_avatar", accept: 'image/png,image/gif,image/jpeg' %>
+  <%= f.cropbox :avatar, width: 300, height: 300 %>
+  <%= f.previewbox :avatar %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
